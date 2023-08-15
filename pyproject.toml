@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Jayden Edara <aedara@uw.edu>"]
 readme = "README.md"
-packages = [{include = "neon_se_scrapers"}]
+packages = [{include = "search_engines"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
