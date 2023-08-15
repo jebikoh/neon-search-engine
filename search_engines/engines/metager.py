@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 from search_engines.engine import SearchEngine
-from search_engines.config import PROXY, TIMEOUT, FAKE_USER_AGENT
+from search_engines.config import PROXY, TIMEOUT, USER_AGENT_GEN
 
 
 class Metager(SearchEngine):
@@ -10,7 +10,7 @@ class Metager(SearchEngine):
     def __init__(self, proxy=PROXY, timeout=TIMEOUT):
         super(Metager, self).__init__(proxy, timeout)
         self._base_url = 'https://metager.org'
-        self.set_headers({'User-Agent': FAKE_USER_AGENT})
+        self.set_headers({'User-Agent': USER_AGENT_GEN.random})
 
     def _selectors(self, element):
         """Returns the appropriate CSS selector."""
@@ -20,7 +20,7 @@ class Metager(SearchEngine):
             'text': 'div.result-description',
             'links': '#results div.result',
             'next': '#next-search-link a',
-            }
+        }
         return selectors[element]
 
     def redirect(self, query):

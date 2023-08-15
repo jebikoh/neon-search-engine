@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "neon-se-scrapers"
+version = "0.1.0"
+description = ""
+authors = ["Jayden Edara <aedara@uw.edu>"]
+readme = "README.md"
+packages = [{include = "neon_se_scrapers"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = {version = ">=2.22.0", extras = ["socks"]}
+beautifulsoup4 = ">=4.10.0"
+fake-useragent = "^1.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
